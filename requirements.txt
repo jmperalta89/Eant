@@ -1,7 +1,7 @@
 pandas==1.3.1
 numpy==1.19.2
 seaborn==0.7.1
-matplotlib.pyplot==3.2.2
+matplotlib.pyplot==3.4.2
 leafmap.foliumap==0.4.0
 folium==0.12.1
 geopandas==0.9.0
