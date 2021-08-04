@@ -15,10 +15,5 @@ app = JupyterDash()
 
 app.layout = html.P("Hola mundo!")
 
-
-if __name__ == "__main__":
-  app.run_server(mode ="external")
-
-    
-  app = dash.Dash(__name__)
+app = dash.Dash(__name__)
 server = app.server
