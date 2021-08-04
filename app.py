@@ -1,29 +1,28 @@
-import os
+import pandas as pd
+import numpy as np
 
-import dash
+# import dash
+from jupyter_dash import JupyterDash
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input,Output,State
+import dash_table
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+import plotly.express as px
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = JupyterDash()
 
-server = app.server
-
-app.layout = html.Div([
-    html.H2('Hello World'),
-    dcc.Dropdown(
-        id='dropdown',
-        options=[{'label': i, 'value': i} for i in ['LA', 'NYC', 'MTL']],
-        value='LA'
-    ),
-    html.Div(id='display-value')
-])
-
-@app.callback(dash.dependencies.Output('display-value', 'children'),
-              [dash.dependencies.Input('dropdown', 'value')])
-def display_value(value):
-    return 'You have selected "{}"'.format(value)
+app.layout = html.Div(children=[html.H1(children= 'Ejemplo'),
+              html.Div(children= '''Dash: a web based app to show'''),
+              dcc.Graph(id='dash_graph',
+              figure = {'data': [{ 'x' :[1,2,3,4,5], 'y' : [4,5,6,7,8,9], 'type':'bar', 'name':'bread'},], 
+              'layout':{'title': 'dash example' }     
+                    
+}
+)     
+                      
+                      
+                ])
 
 if __name__ == '__main__':
     app.run_server(debug=True)
