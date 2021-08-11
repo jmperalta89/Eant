@@ -14,6 +14,7 @@ values =  [['1','2','3']]
 nueva_tabla = pd.DataFrame( { 'NUMEROS':indices, 'VALORES': values})
 nueva_tabla
 
+!pip freeze > requirements.txt
 import types
 
 def imports():
@@ -23,5 +24,3 @@ def imports():
         if val.__name__!='types':
           yield val.__name__
 list(imports())
-
-!pip freeze > requirements.txt
